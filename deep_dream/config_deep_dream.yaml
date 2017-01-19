@@ -20,12 +20,7 @@ parameters:
     
   - name: base_file
     type: string
-    default: /mnt/storage_codi/jczakon/data/neptune_deep_art/inputs/neptune_god.jpg
-    required: False
-    
-  - name: dream_type
-    type: string
-    default: cool_trip
+    default: /mnt/storage_codi/jczakon/deep_learning_art_webinar/shop.jpg
     required: False
     
   - name: dream_iter
@@ -33,7 +28,22 @@ parameters:
     default: 100
     required: False
     
-  - name: output_folder
-    type: string
-    default:  /mnt/storage_codi/jczakon/data/neptune_deep_art/dream_outputs/
+  - name: layer_nr
+    type: int
+    default:  18
+    required: False
+
+  - name: filter_nr
+    type: int
+    default:  2
+    required: False
+
+  - name: coeff
+    type: double
+    default:  0.02
+    required: False
+
+  - name: jitter
+    type: int
+    default:  5
     required: False
