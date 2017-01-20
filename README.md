@@ -23,14 +23,6 @@
 - Hard to read code 
 - Stories of how complex data science is
 
-#### This is us
-
-[![Alt text for your video](https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png?w=350)](https://deepsense.io/)
-
-[![Alt text for your video](https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg?w=350)](https://www.codilime.com/)
-
-[![Alt text for your video](http://neptune.deepsense.io/img/logo.png?w=350)](https://deepsense.io/neptune-early-adopter-program/)
-
 #### Papers, blogs, repos
 
 Keras.io deep dream https://github.com/fchollet/keras/blob/master/examples/deep_dream.py
@@ -39,6 +31,10 @@ keras.io style transfer https://github.com/fchollet/keras/blob/master/examples/n
 
 Neptune http://neptune.deepsense.io/versions/latest/
 
+#### This is us
 
+[![Alt text for your video](https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png?w=350)](https://deepsense.io/)
 
+[![Alt text for your video](https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg?w=350)](https://www.codilime.com/)
 
+[![Alt text for your video](http://neptune.deepsense.io/img/logo.png?w=350)](https://deepsense.io/neptune-early-adopter-program/)
