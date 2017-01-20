@@ -3,10 +3,11 @@
 ## Jakub Czakon
 ## *"Deep dream and neural style transfer. "Your dog would understand" Tutorial"*
 
+
+[![Alt text for your video](https://d.ibtimes.co.uk/en/full/1447143/mad-max-fury-road-google-deepdream.jpg?w=1150)](https://www.youtube.com/watch?v=DgPaCWJL7XI)
+
 [![Alt text for your video](http://genekogan.com/images/style-transfer/ml_egypt_crab_maps.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
 
-
-<img src="http://genekogan.com/images/style-transfer/picasso-periods.mp4" width="250"> 
 
 ### https://deepsense.io 
 
