@@ -5,7 +5,7 @@
 
 ### https://deepsense.io 
 
-[![genekogan](https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png)](http://genekogan.com/images/style-transfer/picasso-periods.mp4 "Genekogan")
+<img src="http://genekogan.com/images/style-transfer/picasso-periods.mp4" width="250"> 
 
 <img src="https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png" width="250"> 
 
