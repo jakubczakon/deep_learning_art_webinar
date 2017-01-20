@@ -35,6 +35,7 @@
 #### Papers, blogs, repos
 
 Keras.io deep dream https://github.com/fchollet/keras/blob/master/examples/deep_dream.py
+
 keras.io style transfer https://github.com/fchollet/keras/blob/master/examples/neural_style_transfer.py
 
 Neptune http://neptune.deepsense.io/versions/latest/
