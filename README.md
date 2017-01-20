@@ -1,4 +1,5 @@
-# deepsense.io webinar <img src="https://lh3.googleusercontent.com/uYKoyPJ_MnOG5f0xPHPUWIkK7y2rFksB2ZJYRX0f5NQ5W5RNWT8eKmY7MBfdQRd2s3Qn20Oz1QKOra-JBJ04kw-BtHUo6iY=s888" width="150"> 
+# deepsense.io webinar 
+
 ## Jakub Czakon
 ## *"Deep dream and neural style transfer. "Your dog would understand" Tutorial"*
 
