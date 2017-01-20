@@ -3,12 +3,12 @@
 ## Jakub Czakon
 ## *"Deep dream and neural style transfer. "Your dog would understand" Tutorial"*
 
-### https://deepsense.io 
-
-[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
+[![Alt text for your video](http://genekogan.com/images/style-transfer/ml_egypt_crab_maps.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
 
 
 <img src="http://genekogan.com/images/style-transfer/picasso-periods.mp4" width="250"> 
+
+### https://deepsense.io 
 
 <img src="https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png" width="250"> 
 
