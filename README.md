@@ -3,18 +3,19 @@
 ## Jakub Czakon
 ## *"Deep dream and neural style transfer. "Your dog would understand" Tutorial"*
 
+### https://deepsense.io 
 
-[![Alt text for your video](https://d.ibtimes.co.uk/en/full/1447143/mad-max-fury-road-google-deepdream.jpg?w=1150)](https://www.youtube.com/watch?v=DgPaCWJL7XI)
+[![Alt text for your video](https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png)](https://deepsense.io/)
+
+### www.codilime.com/
+
+[![Alt text for your video](https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg)](https://www.codilime.com/)
+
+[![Alt text for your video](https://d.ibtimes.co.uk/en/full/1447143/mad-max-fury-road-google-deepdream.jpg?w=650)](https://www.youtube.com/watch?v=DgPaCWJL7XI)
 
 [![Alt text for your video](http://genekogan.com/images/style-transfer/ml_egypt_crab_maps.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
 
 
-### https://deepsense.io 
-
-<img src="https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png" width="250"> 
-
-### www.codilime.com/
-<img src="https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg" width="250">
 
 ### What you will find in the webinar
 
