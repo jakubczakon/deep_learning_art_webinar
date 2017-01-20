@@ -9,6 +9,10 @@
 
 [![Alt text for your video](https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg?w=350)](https://www.codilime.com/)
 
+[![Alt text for your video](http://neptune.deepsense.io/img/logo.png?w=350)](https://deepsense.io/neptune-early-adopter-program/)
+
+http://neptune.deepsense.io/img/logo.png
+
 #### This is what it is all about
 
 [![Alt text for your video](https://d.ibtimes.co.uk/en/full/1447143/mad-max-fury-road-google-deepdream.jpg?w=650)](https://www.youtube.com/watch?v=DgPaCWJL7XI)
