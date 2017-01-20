@@ -55,6 +55,9 @@ def get_layer_dict(model):
                                          model.layers)])
     return layer_dict
 
+def get_layer_dict_name(model):
+    return dict([(layer.name, layer) for layer in model.layers])
+
 # util function to convert a tensor into a valid image
 def deprocess_image(x,img_width=224,img_height=224):
     x = x.reshape((img_width, img_height, 3))
