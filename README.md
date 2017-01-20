@@ -1,6 +1,6 @@
-# Google Developers Group Devfest Warsaw 2016 <img src="https://lh3.googleusercontent.com/uYKoyPJ_MnOG5f0xPHPUWIkK7y2rFksB2ZJYRX0f5NQ5W5RNWT8eKmY7MBfdQRd2s3Qn20Oz1QKOra-JBJ04kw-BtHUo6iY=s888" width="150"> 
+# deepsense.io webinar <img src="https://lh3.googleusercontent.com/uYKoyPJ_MnOG5f0xPHPUWIkK7y2rFksB2ZJYRX0f5NQ5W5RNWT8eKmY7MBfdQRd2s3Qn20Oz1QKOra-JBJ04kw-BtHUo6iY=s888" width="150"> 
 ## Jakub Czakon
-## *"How to have fun with deep learning"*
+## *"Deep dream and neural style transfer. "Your dog would understand" Tutorial"*
 
 ### https://deepsense.io 
 
@@ -9,21 +9,28 @@
 ### www.codilime.com/
 <img src="https://www.codilime.com/wp-content/uploads/2016/03/codilime-color-logo-white-background-300-jpg.jpg" width="250">
 
+### What you will find in the webinar
+
+- How to visualize what happens inside your deep model
+- What happens when you have fun instead of doing your job
+- What deep dream does under the hood
+- How to do neural style transfer
+- How to do it better with Neptune
+
+### What you will NOT find in the webinar
+
+- Difficult mathematical explanations
+- Hard to read code 
+- Stories of how complex data science is
+
+
 #### Papers, blogs, repos
 
-FizzBizz in tensorflow http://joelgrus.com/2016/05/23/fizz-buzz-in-tensorflow/
+Keras.io deep dream https://github.com/fchollet/keras/blob/master/examples/deep_dream.py
+keras.io style transfer https://github.com/fchollet/keras/blob/master/examples/neural_style_transfer.py
 
-Google blog post about deep dreaming https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html
+Neptune http://neptune.deepsense.io/versions/latest/
 
-Deep Jazz project https://github.com/jisungk/deepjazz
-
-Char RNN Tensorflow https://github.com/sherjilozair/char-rnn-tensorflow/blob/master/train.py
-
-Style Transfer in Keras https://github.com/titu1994/Neural-Style-Transfer
-
-Style transfer paper https://arxiv.org/abs/1508.06576
-
-Magic the Gathering card generation forum thread http://www.mtgsalvation.com/forums/creativity/custom-card-creation/612057-generating-magic-cards-using-deep-recurrent-neural?page=98
 
 
 
