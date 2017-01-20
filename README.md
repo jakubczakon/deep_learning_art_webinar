@@ -5,6 +5,9 @@
 
 ### https://deepsense.io 
 
+[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
+
+
 <img src="http://genekogan.com/images/style-transfer/picasso-periods.mp4" width="250"> 
 
 <img src="https://deepsense.io/wp-content/uploads/2016/11/ds.io-logo-big.png" width="250"> 
