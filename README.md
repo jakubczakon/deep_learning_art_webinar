@@ -6,7 +6,11 @@
 
 [![Alt text for your video](https://d.ibtimes.co.uk/en/full/1447143/mad-max-fury-road-google-deepdream.jpg?w=650)](https://www.youtube.com/watch?v=DgPaCWJL7XI)
 
+http://www.telegraph.co.uk/technology/google/11730050/deep-dream-best-images.html?frame=3370396
+
 [![Alt text for your video](http://genekogan.com/images/style-transfer/ml_egypt_crab_maps.jpg)](http://genekogan.com/images/style-transfer/picasso-periods.mp4)
+
+http://genekogan.com/works/style-transfer/
 
 ### What you will find in the webinar
 
