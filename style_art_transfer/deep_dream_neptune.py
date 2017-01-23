@@ -79,22 +79,19 @@ img_recognition_network = VGG16(input_tensor=input_template,
 
 layer_dict = utils.get_layer_dict(img_recognition_network)
 
-x = layer_dict[LAYER_NR].output[:,:,:,FILTER_NR]
-shape = layer_dict[LAYER_NR].output_shape[:3]
-
-loss =  K.variable(0.) - COEFF * K.sum(K.square(x))
-
-grads = K.gradients(loss, input_template)
-
-f_outputs = K.function([input_template], [loss] + grads)
-
-
 def neptune_image(raw_image,description):
     stylish_image = Image.fromarray(raw_image)
     return neptune.Image(
         name="neptune dreams",
         description=description,
         data=stylish_image)
+
+BASE_IMAGE_PATH = (ctx.params.base_file)
+DREAM_ITER = (ctx.params.dream_iter)
+LAYER_NR = (ctx.params.layer_nr)
+FILTER_NR = (ctx.params.filter_nr)
+COEFF = (ctx.params.coeff)
+JITTER = (ctx.params.jitter)
 
 def eval_loss_and_grads(img_tensor,layer_dict,
                        layer_type,layer_nr,filter_nr,coeff):
