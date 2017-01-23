@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import sys,os,glob
-sys.path.append('/home/jakub/projects/deep_learning_art_webinar')
+sys.path.append('/home/jakub.czakon/deep_learning_art_webinar')
 
 import time
 
@@ -20,7 +20,30 @@ import keras.backend as K
 
 import utils
 
+from deepsense import neptune
+
 # NEPTUNE CONFIG
+
+def set_layer_nr(value):
+    global LAYER_NR
+    LAYER_NR  = int(value)
+    return str(LAYER_NR)
+    
+def set_filter_nr(value):
+    global FILTER_NR
+    FILTER_NR  = int(value)
+    return str(FILTER_NR)
+
+def set_coeff(value):
+    global COEFF
+    COEFF  = float(value)
+    return str(COEFF)
+    
+def set_jitter(value):
+    global JITTER
+    JITTER  = int(value)
+    return str(JITTER)
+
 
 ctx = neptune.Context()
 
@@ -41,29 +64,11 @@ ctx.job.register_action(name='set filter number', handler = set_filter_nr)
 ctx.job.register_action(name='set coefficient', handler = set_coeff)
 ctx.job.register_action(name='set jitter', handler = set_jitter)
 
-def set_layer_nr(value):
-    global FILTER_NR
-    FILTER_NR  = int(value)
-    return str(FILTER_NR)
-    
-def set_filter_nr(value):
-    global FILTER_NR
-    FILTER_NR  = int(value)
-    return str(FILTER_NR)
-
-def set_coeff(value):
-    global COEFF
-    COEFF  = float(value)
-    return str(COEFF)
-    
-def set_jitter(value):
-    global JITTER
-    JITTER  = int(value)
-    return str(JITTER)
 
 # GLOBALS
 BASE_IMAGE_PATH = (ctx.params.base_file)
 DREAM_ITER = (ctx.params.dream_iter)
+OPTIM_ITER = (ctx.params.optim_iter)
 LAYER_NR = (ctx.params.layer_nr)
 FILTER_NR = (ctx.params.filter_nr)
 COEFF = (ctx.params.coeff)
@@ -79,6 +84,7 @@ img_recognition_network = VGG16(input_tensor=input_template,
 
 layer_dict = utils.get_layer_dict(img_recognition_network)
 
+
 def neptune_image(raw_image,description):
     stylish_image = Image.fromarray(raw_image)
     return neptune.Image(
@@ -86,15 +92,8 @@ def neptune_image(raw_image,description):
         description=description,
         data=stylish_image)
 
-BASE_IMAGE_PATH = (ctx.params.base_file)
-DREAM_ITER = (ctx.params.dream_iter)
-LAYER_NR = (ctx.params.layer_nr)
-FILTER_NR = (ctx.params.filter_nr)
-COEFF = (ctx.params.coeff)
-JITTER = (ctx.params.jitter)
-
 def eval_loss_and_grads(img_tensor,layer_dict,
-                       layer_type,layer_nr,filter_nr,coeff):
+                       layer_nr,filter_nr,coeff):
  
     x = layer_dict[layer_nr].output[:,:,:,filter_nr]
 
@@ -145,30 +144,32 @@ class Evaluator(object):
 if __name__ == "__main__":
 
     img_dream = img_utils.load_img(BASE_IMAGE_PATH,target_size = img_size[:2])
-    x = utils.img2vggtensor(img_dream) 
+    tensor = utils.img2vggtensor(img_dream) 
 
     for i in range(DREAM_ITER):
         
         evaluator = Evaluator(layer_dict = layer_dict,
-                              layer_nr = layer_nr,filter_nr = filter_nr,
-                              coeff = coeff)
+                              layer_nr = LAYER_NR,filter_nr = FILTER_NR,
+                              coeff = COEFF)
         
         logging_channel.send(x = time.time(),y = "iteration %s start"%i)
 
         random_jitter = (JITTER * 2) * (np.random.random(img_size) - 0.5)
-        x += random_jitter
+        tensor += random_jitter
 
-        x, min_val, info = fmin_l_bfgs_b(evaluator.loss, x.flatten(),
-                                         fprime=evaluator.grads, maxfun=7)
+        tensor, min_val, info = fmin_l_bfgs_b(evaluator.loss, tensor.flatten(),
+                                         fprime=evaluator.grads, maxfun=OPTIM_ITER)
         loss_channel.send(x = i, y = float(min_val))
         logging_channel.send(x = time.time(),y = "iteration %s error %s"%(i,min_val))
 
-        x = x.reshape((1,)+img_size)
-        x -= random_jitter
-        img = utils.deprocess_image(np.copy(x))
+        tensor = tensor.reshape((1,)+img_size)
+        tensor -= random_jitter
+        img = utils.deprocess_image(np.copy(tensor))
         
-        description = "img_{}_{}_{}_{}_{}".\
-                                format(LAYER_NR,
+        description = "File:{}\nOptimization Iterations:{}\nLayer number:{}\nFilter Number:{}\n\Coefficient:{}\nJitter:{}\nIteration:{}\n".\
+                                format(BASE_IMAGE_PATH.split("/")[-1],
+                                       OPTIM_ITER,
+                                       LAYER_NR,
                                        FILTER_NR,
                                        COEFF,
                                        JITTER,
@@ -176,5 +177,5 @@ if __name__ == "__main__":
                                       )
             
         result_channel.send(x = time.time(),
-                            y = neptune_img(img,description)
+                            y = neptune_image(img,description)
                             )

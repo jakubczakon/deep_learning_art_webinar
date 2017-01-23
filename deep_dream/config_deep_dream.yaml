@@ -14,20 +14,25 @@
 # limitations under the License.
 #
 
-name: Deep Dream training
-project: neptune art
+name: Deep Dream 
+project: deep art webinar
 parameters:
     
   - name: base_file
     type: string
-    default: /mnt/storage_codi/jczakon/deep_learning_art_webinar/shop.jpg
+    default: /home/jakub.czakon/deep_learning_art_webinar/deep_dream/resources/forest2.jpg
     required: False
     
   - name: dream_iter
     type: int
     default: 100
     required: False
-    
+
+  - name: optim_iter
+    type: int
+    default: 7
+    required: False
+
   - name: layer_nr
     type: int
     default:  18
@@ -45,5 +50,5 @@ parameters:
 
   - name: jitter
     type: int
-    default:  5
+    default:  105
     required: False
