@@ -1,6 +1,6 @@
 # deepsense.io webinar 
 
-## Deep dream and neural style transfer: *"Your dog would understand"* tutorial
+## Deep dream and neural style transfer: Super simple tutorial
 
 #### This is what it is all about
 
