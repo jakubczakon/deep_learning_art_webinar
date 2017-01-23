@@ -2,7 +2,6 @@ import glob
 
 import numpy as np
 
-import cv2
 from matplotlib import pyplot as plt
 
 from keras.applications.imagenet_utils import preprocess_input,decode_predictions
@@ -16,19 +15,6 @@ def rgb2tensor(img,mode="tf"):
     else:
         raise ValueError("wrong mode")
     return img
-
-def grey2rgb(img,mode="tf"):
-    img = np.stack([img]*3,axis=2)
-    return img
-
-def preprocess_mnist(data):
-    data_processed = []
-    for img in data:
-        img = cv2.resize(img,(224,224))
-        img = grey2rgb(img)
-        img_tensor = rgb2tensor(img)
-        data_processed.append(img_tensor)
-    return np.stack(data_processed)
 
 def get_images_from_directory(dir_path,extensions = ['jpg']):
     
