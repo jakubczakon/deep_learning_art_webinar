@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-name: Deep Dream training
-project: neptune art
+name: Deep Dream 
+project: deep art webinar
 parameters:
     
   - name: base_file
@@ -35,7 +35,7 @@ parameters:
 
   - name: layer_nr
     type: int
-    default:  18
+    default:  2
     required: False
 
   - name: filter_nr
@@ -45,10 +45,10 @@ parameters:
 
   - name: coeff
     type: double
-    default:  0.02
+    default:  0.002
     required: False
 
   - name: jitter
     type: int
-    default:  105
+    default:  10
     required: False

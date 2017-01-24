@@ -35,12 +35,12 @@ parameters:
 
   - name: optim_iter
     type: int
-    default: 20
+    default: 40
     required: False
 
   - name: content_weight
     type: double
-    default: 0.1e-7
+    default: 0.001
     required: False
 
   - name: style_weight
