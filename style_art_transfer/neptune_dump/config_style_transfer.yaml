@@ -40,10 +40,15 @@ parameters:
 
   - name: content_weight
     type: double
-    default: 0.001
+    default: 0.025
     required: False
 
   - name: style_weight
     type: double
-    default: 0.2e6
+    default: 1.0
+    required: False
+
+  - name: variational_weight
+    type: double
+    default: 1.0
     required: False

@@ -58,6 +58,7 @@ STYLE_ITER = (ctx.params.style_iter)
 OPTIM_ITER = (ctx.params.optim_iter)
 CONTENT_WEIGHT = (ctx.params.content_weight)
 STYLE_WEIGHT = (ctx.params.style_weight)
+VARIATIONAL_WEIGHT = (ctx.params.variational_weight)
 
 content_feature_names = 'block4_conv2'
 style_feature_names = ['block1_conv1', 'block2_conv1','block3_conv1','block4_conv1',
@@ -100,6 +101,10 @@ def style_loss(style, combination):
 def content_loss(base, combination):
     return K.sum(K.square(combination - base))
     
+def total_variation_loss(x):
+    a = K.square(x[:, :img_nrows - 1, :img_ncols - 1, :] - x[:, 1:, :img_ncols - 1, :])
+    b = K.square(x[:, :img_nrows - 1, :img_ncols - 1, :] - x[:, :img_nrows - 1, 1:, :])
+    return K.sum(K.pow(a + b, 1.25))
     
 layer_dict = utils.get_layer_dict_name(img_recognition_network)
 
@@ -123,7 +128,9 @@ for layer_name in style_feature_names:
     style_loss_chunk = style_loss(style_reference_features, combination_features)
     loss += (STYLE_WEIGHT / len(style_feature_names)) * style_loss_chunk
 
-# get the gradients of the generated image wrt the loss
+# VARIATIONAL LOSS    
+loss += VARIATIONAL_WEIGHT * total_variation_loss(combination)
+
 grads = K.gradients(loss, combination)
 
 outputs = [loss] + grads
