@@ -35,20 +35,20 @@ parameters:
 
   - name: layer_nr
     type: int
-    default:  2
+    default:  12
     required: False
 
   - name: filter_nr
     type: int
-    default:  2
+    default:  7
     required: False
 
   - name: coeff
     type: double
-    default:  0.002
+    default:  0.02
     required: False
 
   - name: jitter
     type: int
-    default:  10
+    default:  15
     required: False
