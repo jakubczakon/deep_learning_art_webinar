@@ -59,6 +59,10 @@ result_channel = ctx.job.create_channel(
     name='result image',
     channel_type=neptune.ChannelType.IMAGE)
 
+filter_activation_channel = ctx.job.create_channel(
+    name='filter activation',
+    channel_type=neptune.ChannelType.IMAGE)
+
 ctx.job.register_action(name='set layer number', handler = set_layer_nr)
 ctx.job.register_action(name='set filter number', handler = set_filter_nr)
 ctx.job.register_action(name='set coefficient', handler = set_coeff)
@@ -91,6 +95,12 @@ def neptune_image(raw_image,description):
         name="neptune dreams",
         description=description,
         data=stylish_image)
+
+def get_activations(model, layer, X_batch):
+    get_activations = K.function([model.layers[0].input, K.learning_phase()], 
+                                 [model.layers[layer].output,])
+    activations = get_activations([X_batch,0])
+    return activations[0]
 
 def eval_loss_and_grads(img_tensor,layer_dict,
                        layer_nr,filter_nr,coeff):
@@ -178,4 +188,16 @@ if __name__ == "__main__":
             
         result_channel.send(x = time.time(),
                             y = neptune_image(img,description)
+                            )
+
+        
+        activations = get_activations(img_recognition_network,LAYER_NR,tensor)
+        filter_output = activations[0,:,:,FILTER_NR]
+        
+        filter_output /= filter_output.max()
+        filter_output *=255.
+        filter_output = filter_output.astype(np.uint8)
+        
+        filter_activation_channel.send(x = time.time(),
+                            y = neptune_image(filter_output,"Output on chosed neuron\nLayer {} \nFilter {}".format(LAYER_NR,FILTER_NR))
                             )
