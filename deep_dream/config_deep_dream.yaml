@@ -30,25 +30,25 @@ parameters:
 
   - name: optim_iter
     type: int
-    default: 7
+    default: 5
     required: False
 
   - name: layer_nr
     type: int
-    default:  12
+    default:  9
     required: False
 
   - name: filter_nr
     type: int
-    default:  7
+    default:  3
     required: False
 
   - name: coeff
     type: double
-    default:  0.02
+    default:  0.1
     required: False
 
   - name: jitter
     type: int
-    default:  15
+    default:  5
     required: False

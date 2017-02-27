@@ -108,6 +108,7 @@ def eval_loss_and_grads(img_tensor,layer_dict,
     x = layer_dict[layer_nr].output[:,:,:,filter_nr]
 
     loss =  - coeff * K.sum(K.square(x))
+    loss += 0.1 * K.sum(K.square(input_template)) / np.prod(img_size)
 
     grads = K.gradients(loss, input_template)
 
